@@ -45,6 +45,7 @@ export default function GlobalCounter(block) {
               ))}
             </div>
           </div>
+          <div><br /><br /></div>
         </div>
       </div>
     </section>
