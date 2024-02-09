@@ -1,0 +1,100 @@
+.impactContainer {
+    display: flex;
+    /* This will create a flex container and render children in a row */
+    justify-content: space-around;
+    /* This will space the children evenly */
+    align-items: flex-start;
+    /* This will align items to the top of the container */
+    flex-wrap: wrap;
+    /* This will allow items to wrap into the next row if the container is not wide enough */
+    background-color: #fdf3f2;
+}
+
+.impact {
+    flex: 1;
+    /* This will allow each child to grow equally */
+    margin: 10px;
+    /* Optional: adds space between the children */
+    max-width: 33%;
+    /* Optional: ensures that no child takes more than a third of the space */
+    position: relative;
+    /* Make this a positioned container for absolute children */
+    width: 100%; /* Or any specific width */
+    justify-content: space-around;
+}
+
+
+.impact img {
+    width: 100%;
+    /* Makes the image responsive */
+    height: 100%;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Prevents default image inline behavior */
+    object-fit: cover; /* This will cover the area without distorting the image */
+}
+
+.impactText {
+    position: absolute;
+    /* Position the text over the image */
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    /* Center the text */
+    /* Add more styling as necessary */
+    background-color: #fdf3f2;
+    /* Example: semi-transparent black background */
+    padding: 1em;
+    /* Add some padding */
+    border-radius: 8px;
+    /* Optional: if you want rounded corners */
+    width: 80%;
+    height: auto;
+    /* Subtract the left and right padding from the total width */
+    box-sizing: border-box;
+    /* Ensures padding is included in width calculation */
+    text-align: center;
+    /* Centers the text */
+    /* You can use any color you want for the background */
+}
+
+.impactLink {
+    display: inline-block;
+    /* Allows the ability to set dimensions */
+    padding: 10px 20px;
+    /* Adjust the padding to your preference for the button size */
+    background-color: #e63b2a;
+    /* Example: a blue background, you can choose any color */
+    color: #fdf3f2;
+    /* Text color */
+    text-decoration: none;
+    /* Removes the underline from links */
+    border-radius: 25px;
+    /* Gives the button rounded corners */
+    font-weight: bold;
+    /* Makes the text bold */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+    margin-top: 1em;
+    /* Adds space above the button */
+}
+
+.impactLink:hover {
+    background-color: #b32d21;
+    /* Darker shade of blue for hover effect */
+    color: #fdf3f2;
+    /* You could also change the text color on hover if desired */
+    text-decoration: none;
+    /* Continues to remove the underline on hover */
+}
+
+/* Responsive design to stack the items on smaller screens */
+@media (max-width: 768px) {
+    .impactContainer {
+        flex-direction: column;
+    }
+
+    .impact {
+        max-width: 100%;
+    }
+}

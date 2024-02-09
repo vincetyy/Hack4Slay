@@ -13,6 +13,11 @@ content_blocks:
     title: A plan for everyone
     description: Sendit is easy to get started and we have a pricing plan for businesses of all sizes.
 
+  - _bookshop_name: GUI/stats
+    societal_impact_img: /images/GUI/societal_impact.webp
+    educational_impact_img: /images/GUI/educational_impact.webp
+    sustainable_impact_img: /images/GUI/sustainable_impact.webp
+
   - _bookshop_name: pricing/table
     pricing_tier:
       - tier: Free
