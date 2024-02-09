@@ -7,7 +7,7 @@
     /* This will align items to the top of the container */
     flex-wrap: wrap;
     /* This will allow items to wrap into the next row if the container is not wide enough */
-    background-color: #fdf3f2;
+    background-color: white;
 }
 
 .impact {
@@ -32,7 +32,7 @@
     display: block;
     /* Prevents default image inline behavior */
     object-fit: cover; /* This will cover the area without distorting the image */
-    border-radius: 20px;
+    border-radius: 40px;
 }
 
 .impactText {
