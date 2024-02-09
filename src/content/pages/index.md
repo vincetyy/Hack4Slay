@@ -46,6 +46,7 @@ content_blocks:
     sustainable_impact_img: /images/GUI/sustainable_impact.webp
     wow_kampung_img: /images/GUI/wow_kampung.png
     kampung_kampus_img: /images/GUI/kampung_kampus.png
+    balik_kampung_img: /images/GUI/balik_kampung.png
   # - _bookshop_name: home/hero
   #   title: Beautiful email campaigns
   #   description: >-

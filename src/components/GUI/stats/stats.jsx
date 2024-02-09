@@ -46,12 +46,7 @@ export default function Stats(block) {
         </div>
 
         <div className="impact">
-          <img src={block.sustainable_impact_img} alt="Sustainable Impact Image" />
-          <div className="impactText">
-            <h2>Sustainable Impact</h2>
-            <p>We are working with <strong>520</strong> partners to further this initiative</p>
-            <a href="link_to_your_live_impact_page" className="impactLink">See our live impact</a>
-          </div>
+          <img src={block.balik_kampung_img} alt="Balik Kampung Image" />
         </div>
       </div>
     </div>
