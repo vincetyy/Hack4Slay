@@ -17,6 +17,8 @@ content_blocks:
     societal_impact_img: /images/GUI/societal_impact.webp
     educational_impact_img: /images/GUI/educational_impact.webp
     sustainable_impact_img: /images/GUI/sustainable_impact.webp
+    wow_kampung_img: /images/GUI/wow_kampung.png
+    kampung_kampus_img: /images/GUI/kampung_kampus.png
 
   - _bookshop_name: pricing/table
     pricing_tier:
