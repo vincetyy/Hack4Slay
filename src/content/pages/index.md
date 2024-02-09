@@ -10,16 +10,20 @@ seo:
   open_graph_type:
   no_index: false
 content_blocks:
-  - _bookshop_name: home/hero
-    title: Beautiful email campaigns
-    description: >-
-      With Sendit, you can quickly create beautiful rich emails that capture a
-      reader's attention, engage them, and convert them into customers.
-    image: /images/hero/hero-image-2.png
-    image_alt: Reports dashboard
-    button:
-      text: Try This Free
-      link: /signup/
+  - _bookshop_name: home/video
+    image: /images/GUI/VidTN.png
+    image_alt: Thumbnail for video
+    video_url: data/gui.mp4
+  # - _bookshop_name: home/hero
+  #   title: Beautiful email campaigns
+  #   description: >-
+  #     With Sendit, you can quickly create beautiful rich emails that capture a
+  #     reader's attention, engage them, and convert them into customers.
+  #   image: /images/hero/hero-image-2.png
+  #   image_alt: Reports dashboard
+  #   button:
+  #     text: Try This Free
+  #     link: /signup/
   - _bookshop_name: global/counter
     title: Scale your
     title_suffix: Business
@@ -44,10 +48,7 @@ content_blocks:
         number: 4322
         suffix: +
         text: Active users and growing
-  - _bookshop_name: home/video
-    image: /images/video/video-thum.jpg
-    image_alt: Thumbnail for video
-    video_url: https://vimeo.com/45830194
+  
   - _bookshop_name: global/header
     title: "Sendit "
     title_suffix: Features
