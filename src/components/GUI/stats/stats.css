@@ -32,6 +32,7 @@
     display: block;
     /* Prevents default image inline behavior */
     object-fit: cover; /* This will cover the area without distorting the image */
+    border-radius: 20px;
 }
 
 .impactText {
