@@ -1,7 +1,7 @@
 {
   "logo": "/images/Logo.png",
   "logo_url": "/",
-  "copyright": "MyCompany. All rights reserved.",
+  "copyright": "GUItopia. All rights reserved.",
   "social": [
     {
       "link": "https://www.facebook.com/mycompany",
@@ -33,42 +33,12 @@
           "text": "Home"
         },
         {
-          "link": "/features/",
-          "text": "Features"
-        },
-        {
-          "link": "/pricing/",
-          "text": "Price"
+          "link": "/guitopiagarden/",
+          "text": "GUItopia Garden"
         },
         {
           "link": "/about/",
           "text": "About"
-        }
-      ]
-    },
-    {
-      "title": "Community",
-      "links": [
-        {
-          "link": "/blog/",
-          "text": "Blog"
-        },
-        {
-          "link": "/feed.xml",
-          "text": "RSS Feed"
-        }
-      ]
-    },
-    {
-      "title": "Company",
-      "links": [
-        {
-          "link": "/contact/",
-          "text": "Contact"
-        },
-        {
-          "link": "/privacy/",
-          "text": "Privacy Policy"
         }
       ]
     }

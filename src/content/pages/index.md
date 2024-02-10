@@ -16,29 +16,27 @@ content_blocks:
     video_url: /video/gui.mp4
 
   - _bookshop_name: global/counter
-    title: Scale your
-    title_suffix: Business
+    title_suffix: GUItopia
     description: >-
-      We have an extensive library of pre-written sales emails, proven marketing
-      templates, and more to get you started on your next project.
+      Featuring a live data collection and visualization system, GUItopia hopes to demonstrate the collective impact GUI and its volunteers are achieving. ​
     alternate_style: false
     numbers:
-      - prefix: $
-        number: 200
-        suffix: m
-        text: Venture capital raised
+      - prefix: 
+        number: 130000
+        suffix: 
+        text: people provided with a gateway to nature
       - prefix:
-        number: 2016
+        number: 25000
         suffix:
-        text: Established in
+        text: volunteers in learning and training
       - prefix:
-        number: 40
-        suffix: +
-        text: Amazing team members
+        number: 520
+        suffix: 
+        text: partners working to further this initiative
       - prefix:
-        number: 4322
-        suffix: +
-        text: Active users and growing
+        number: 60000
+        suffix: 
+        text: hours of community service
         
   - _bookshop_name: GUI/stats
     societal_impact_img: /images/GUI/societal_impact.webp
