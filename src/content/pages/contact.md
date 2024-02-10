@@ -13,4 +13,9 @@ content_blocks:
     title: "Sendit "
     title_suffix: Features
     description: Sendit is the most complete solution to create beautiful email designs, manage mails and send them out at the best price.
+  - _bookshop_name: game
+    js: /src/components/game/game.js
+    gameHtml: /src/components/game/index.html
+  
+
 ---
