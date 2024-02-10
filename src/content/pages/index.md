@@ -13,7 +13,7 @@ content_blocks:
   - _bookshop_name: home/video
     image: /images/GUI/VidTN.png
     image_alt: Thumbnail for video
-    video_url: data/gui.mp4
+    video_url: video/gui.mp4
 
   - _bookshop_name: global/counter
     title: Scale your

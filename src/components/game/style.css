@@ -26,8 +26,8 @@ body.inverted {
 }
 
 * {
-    font-family:'Courier New',monospace;
-    font-size:13px;
+    font-family:'Lucida Console', monospace;
+    font-size:15px;
 }
 
 #middle {
@@ -43,7 +43,7 @@ body.inverted {
     border:1px solid #000;
     padding:3px;
     width:100%;
-    height:17px;
+    height:23px;
     z-index:997;
     box-shadow:0px 2px 30px #000;
 }
@@ -96,10 +96,10 @@ body.inverted {
 #comment {
     position:absolute;
     width:400px;
-    font-size:16px;
+    font-size:18px;
     left:-200px;
     top:-115px;
-    padding:2px;
+    padding:8px;
     background-color:#22222260;
     border-radius:8px;
     /*box-shadow:0px 0px 5px #000 inset;*/
@@ -125,26 +125,56 @@ body.inverted {
 #treesContainer,#tps {
     position:relative;
     z-index:997;
+    font-size:20px;
 }
 
+/* Existing CSS for #bigTree */
 #bigTree {
     position:absolute;
-    width:256px;
-    height:256px;
-    left:-128px;
-    top:50px;
+    width:360px; /* Adjust the width to make the tree smaller */
+    height:360px; /* Adjust the height to maintain the aspect ratio */
+    left:-180px; /* Adjust the left position if needed */
+    top:240px; /* Adjust the top position if needed */
     background:url(sprites/bigtree.png) no-repeat;
     background-size: cover;
     z-index:500;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    transform-origin: bottom center; /* Set the transform origin to the bottom center */
 }
 
-#bigTree:hover {
-    transform:scale(1.1);
+/* Add new CSS below */
+
+/* Styles for the different tree sizes */
+.treeSize1 { transform: scale(1); }
+.treeSize2 { transform: scale(1.1); }
+.treeSize3 { transform: scale(1.2); }
+.treeSize4 { transform: scale(1.3); }
+.treeSize5 { transform: scale(1.4); }
+.treeSize6 { transform: scale(1.5); }
+.treeSize7 { transform: scale(1.6); }
+.treeSize8 { transform: scale(1.7); }
+.treeSize9 { transform: scale(1.8); }
+.treeSize10 { transform: scale(1.9); }
+
+
+/* Ensure you have the base styles for your tree, water, and compost elements */
+#bigTree {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Add other base styles for your elements as needed */
+
+
+
+.bigTreeHover:hover {
+    transform:scale(1.05);
     filter:brightness(110%);
+    cursor: pointer;
 }
 
-#bigTree:active {
+.bigTreeAction:active {
     transform:scale(1.0);
     filter:brightness(90%);
 }
@@ -164,7 +194,7 @@ body.inverted {
     background-size:100% 100%,cover;
     border-left:1px solid #000;
     height:100vh;
-    z-index:997;
+    z-index:996;
     overflow:auto;
 }
 
@@ -175,7 +205,7 @@ body.inverted {
     background:url(sprites/darkNoise.jpg),#333;
     border-right:1px solid #000;
     height:100vh;
-    z-index:997;
+    z-index:996;
     overflow:hidden;
 }
 
@@ -222,6 +252,40 @@ body.inverted {
 	opacity:0.2;
 }
 
+#missions {
+    position:relative;
+}
+
+#missions>div {
+    position:relative;
+    background:#555 no-repeat;
+    border:1px solid #000;
+    width:256px;
+    height:auto;
+    cursor:pointer;
+    top: 20px;
+    padding: 10px 0;
+}
+
+#missions>div:hover {
+    background-color:#666;
+}
+
+#missions>div:active {
+    background-color:#444;
+}
+
+#missions>div.shaded {
+    background-color:#444;
+    cursor:default;
+}
+
+#missions>div.grayed {
+    background-color:#222;
+    color:#f00;
+    cursor:default;
+}
+
 #shop {
     position:relative;
 }
@@ -263,7 +327,7 @@ moni {
 #treeFloor.large { background:url(sprites/treefloor_large.png) repeat-x; }
 
 .menu {
-    font-size:16px;
+    font-size:18px;
     background:rgba(255,255,255,0.5);
     padding:5px;
     color:#fff;
@@ -282,13 +346,13 @@ moni {
     font-size:2em;
     font-weight:bold;
     text-align: center;
-    padding:10px 0px 0px 0px;
+    padding:50px 0px 15px 0px;
 }
 
 #factoryName {
     position:absolute;
     text-align:center;
-    font-size:14px;
+    font-size:18px;
     font-weight:500;
     width:400px;
     left:-200px;
@@ -368,6 +432,51 @@ moni {
     background: #666;
 }
 
+#uploadButton {
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: 25px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #FFD700;
+    text-align: center;
+    font-size: 15px;
+}
+
+#submitButton {
+    position: relative;
+    top: 620px;
+    left: 0%;
+    width: 100px;
+    height: 25px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #FFD700;
+    text-align: center;
+    font-size: 15px;
+}
+
+#imageInput {
+    position: relative;
+    top: 0px;
+}
+
+#imagePreviewContainer {
+    margin-top: 20px;
+    height: 540px;
+    width: 720px;
+}
+
+#imagePreview {
+    display: none; 
+    max-width: 100%; 
+    max-height: 100%;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hidden {
     display: none;
 }
@@ -398,6 +507,17 @@ moni {
     z-index: 998;
 }
 
+.imgmodal {
+    display: none;
+    position: fixed;
+    z-index: 998;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
 #center-modal {
     position: absolute;
     width: 0;
@@ -419,6 +539,26 @@ moni {
 
 #modal-content .header {
     font-size: 1.25rem !important;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+}
+
+#modal-img {
+    position: absolute;
+    width: 720px;
+    height: 720px;
+    left: -360px;
+    background: url(sprites/darkNoise.jpg);
+    color: #fff;
+    border: 1px solid #FFD700;
+    padding: 2px 12px;
+    box-shadow: 0 2px 16px #222;
+    z-index: 999;
+}
+
+#modal-img .header {
+    font-size: 20px;
     width: 100%;
     text-align: center;
     font-weight: 700;

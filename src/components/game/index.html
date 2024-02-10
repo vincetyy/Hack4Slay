@@ -24,15 +24,28 @@
             </div>
         </div>
     </div>
+    <div id="imgmodal" class="imgmodal">
+        <div id="center-modal">
+            <div id="modal-img">
+                <p class="close-button" onclick="closeimgModal();">&times;</p>
+                <p class="header">Select an image to upload</p>
+                <input type="file" id="imageInput" accept="image/*">
+                <button id="submitButton" onclick="uploadImg();">Upload</button>
+                <div id="imagePreviewContainer">
+                    <img id="imagePreview" src="" alt="Image preview">
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="game">
         <div id="rightPanel">
-            <p id="header">STUFFS</p>
-            <div id="shop"></div>
+            <div id="header">STUFFS</div>
+            <!--<div id="shop"></div>-->
             <div id="store"></div>
         </div>
         <div id="separatorRight"></div>
         <div id="middle">
-            <div id="factoryName" onmouseup="ChangeName();">Apple's Factory</div>
+            <div id="factoryName" onmouseup="ChangeName();">Apple's Garden</div>
             <div id="comment">Loading..</div>
             <div id="treeContainer">
                 <div id="treesContainer">
@@ -41,12 +54,12 @@
                 </div>
                 <div id="tps">Loading...</div>
             </div>
-            <div id="bigTree" onmouseup="ClickTree();"></div>
+            <div class="bigTreeHover bigTreeAction" id="bigTree" onmouseup="ClickTree();"></div>
         </div>
         <div id="separatorLeft"></div>
         <div id="leftPanel">
             <div class="container">
-                <button class="options" id="stats-btn" onmouseup="showStats();">Stats</button>
+                <button class="options" id="stats-btn" onmouseup="showStats();">Missions</button>
                 <button class="options selected" id="options-btn" onmouseup="showOptions();">Options</button>
             </div>
             <div class="tabcontent" id="options">
@@ -65,6 +78,8 @@
                     <p>Total apples: <span id="apples">Loading...</span></p>
                     <p>Times watered: <span id="treeClicked">Loading...</span></p>
                     <!--<p>Apple Apocalypse: <span id="apocalypse">Loading...</span></p>-->
+                    <button id="uploadButton" onclick="uploadButton();">Upload Image</button>
+                    <div id="missions"></div> 
                 </div>
             </div>
         </div>
@@ -72,5 +87,6 @@
         <div id="pops"></div>
     </div>
     <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

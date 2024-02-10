@@ -1,7 +1,7 @@
 function l(what) {return document.getElementById(what);}
 
 Game=l('game');
-Version='1.2.5_01';
+Version='1';
 document.querySelectorAll("#version").forEach(function(e) {
     e.innerHTML=Version;
 });
@@ -40,6 +40,7 @@ CpS=1;
 
 StoreToRebuild=0;
 //AchievementsToRebuild=0;
+checkMission=0;
 
 NumbersOn=1;
 FlashingOn=1;
@@ -93,17 +94,81 @@ showStats=function() {
     l("stats-btn").classList.add("selected");
 }
 
+/*$(document).ready(function() {
+    $('#uploadButton').click(function() {
+        $('#imageUpload').click(); // Trigger the file input click event
+    });
+
+    $('#imageUpload').change(function() {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').html('<img src="' + e.target.result + '" alt="Image preview" style="max-width: 200px; max-height: 200px;"/>');
+            };
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+});
+*/
+
 closeModal=function() {
     l("modal").style.display = "none";
 }
 
-document.addEventListener("click", function(e) {
+uploadButton=function() {
+    for (var i in Missions) {
+        if (Missions[i].active) {
+            l("imgmodal").style.display = "block";
+            return;
+        }
+    }
+    alert("Select a mission first!");
+}
+
+/*var loadFile = function(e) {
+    var reader = new FileReader();
+    reader.onload = function() {
+        var img = l("imageInput");
+        img.src = reader.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+}*/
+
+closeimgModal=function() {
+    l("imgmodal").style.display = "none";
+}
+
+uploadImg=function() {
+    l("imgmodal").style.display = "none";
+    for (var i in Missions) {
+        if (Missions[i].active) {
+            alert("Image uploaded successfully");
+            Missions[i].done=1;
+            Missions[i].active=0;
+            checkMission=1;
+            return;
+        }
+    }
+    alert("Where is your mission?");
+}
+
+l("imageInput").onchange = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var ImgP = l("imagePreview");
+        ImgP.src = e.target.result;
+        ImgP.style.display = "block";
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+/*document.addEventListener("click", function(e) {
     e.preventDefault();
     l("modal").style.display = "none";
-});
+});*/
 
 exportSave=function() {
-    var save=prompt('Copypaste this text and keep it somewhere safe! (yes, it\'s easy to edit - but remember : cheated trees taste terrible!)',MakeSaveString());
+    var save=prompt('Save',MakeSaveString());
 }
 
 function ImportResponse(response) {
@@ -219,6 +284,7 @@ ClickTree=function() {
         treeClick=new Audio('audio/click1.wav');
         if (AudioOn) treeClick.play();
         if (Pops.length<260 && NumbersOn) new Pop('bigTree','+'+CpS);
+        StoreToRebuild=1
     }
 }
 
@@ -242,6 +308,26 @@ RebuildStore=function() {
 	StoreToRebuild=0;
 }
 
+checkMissions=function() {
+    var str='';
+    for(var i in Missions) {
+        var amount=0;
+        if(Missions[i].done) {
+            str+='<div id="mission'+Missions[i].name+'" class="">'+
+            '<b>'+Missions[i].name+' '+'<moni></moni></b><br>'+Missions[i].desc+''+'</div>';
+        } else if (Missions[i].active) {
+            str+='<div id="mission'+Missions[i].name+'" class="shaded">'+
+            '<b>'+Missions[i].name+' '+'<moni></moni></b><br>'+Missions[i].desc+''+'</div>';
+        }else{
+            str+='<div id="mission'+Missions[i].name+
+            '" class="" onclick="clearMission(\''+Missions[i].name+'\');">'+
+            '<b>'+Missions[i].name+' '+'<moni></moni></b><br>'+Missions[i].desc+''+'</div>';
+        }
+    }
+    l('missions').innerHTML=str;
+    checkMission=0;
+}
+
 /*RebuildAchievements=function() {
     var str='';
     for(var i in Achievements) {
@@ -250,6 +336,35 @@ RebuildStore=function() {
     l('shop').innerHTML+=str;
     AchievementsToRebuild=0;
 }*/
+
+Missions=[];
+Mission=function(name,desc,cat,active,done) {
+    this.name=name;
+    this.desc=desc;
+    this.cat=cat;
+    this.active=active;
+    this.done=done;
+    Missions[name]=this;
+
+    this.clearMission=function() {
+        if(!this.done) {
+            this.active=1;
+            checkMission=1;
+            updateActive(this.name);
+        }
+    }
+    checkMission=1;
+}
+
+clearMission=function(what) {
+    Missions[what].clearMission();
+}
+
+function updateActive(what) {
+    for(var i in Missions) {
+        Missions[i].active=(Missions[i].name===Missions[what].name);
+    }
+}
 
 var buyClick=new Audio('audio/buy1.wav');
 Buyables=[];
@@ -309,6 +424,14 @@ new Buyable('Trident','Kills tree entities lost in the sea.','trident',20000,60,
 new Buyable('Stormcaller','Plants trees when there is a storm.','stormcaller',28000,80,function(){Stormcallers++;});
 //new Buyable('Rocket','Grabs trees from other planets.','shipment',48000,200,function(){Rockets++;});
 */
+
+new Mission('Local Produce','Support local farmers by preparing a meal made with locally sourced produce','Daily',false,false);
+new Mission('Nature Walk','Take a walk/jog/run with a scenic view of the local fauna','Daily',false,false);
+new Mission('Sustainable Transport','Opt to cycle/walk to reduce carbon emissions once today','Daily',false,false);
+new Mission('Green Thumb','Grow a mini-garden at home and share your green progress!','Weekly',false,false);
+new Mission('Kind Heart','Make a contribution to the community by donating/volunteering/participating','Weekly',false,false);
+new Mission('Reflect, Share','Take time to reflect on your week. Share with us your insights on sustainability or community involvement','Weekly',false,false);
+
 Pops=[];
 Pop=function(el,str) {
 	this.el=el;
@@ -401,6 +524,19 @@ Main=function() {
         StoreToRebuild=0;
     }
 
+    if(Waters > 0) {
+        l("bigTree").classList.add("bigTreeHover");
+        l("bigTree").classList.add("bigTreeAction");
+    } else {
+        l("bigTree").classList.remove("bigTreeHover");
+        l("bigTree").classList.remove("bigTreeAction");
+    }
+
+    if(checkMission) {
+        checkMissions();
+        checkMission=0;
+    }
+
     /*if(AchievementsToRebuild) {
         RebuildAchievements();
         AchievementsToRebuild=0;
@@ -433,6 +569,12 @@ Main=function() {
 
     for(var i in Buyables) {
         if (Trees>=Buyables[i].price) l('buy'+Buyables[i].name).className=''; else l('buy'+Buyables[i].name).className='grayed';
+    }
+
+    for(var i in Missions) {
+        if (!Missions[i].done) {l('mission'+Missions[i].name).className='';}
+        else if (Missions[i].active) {l('mission'+Missions[i].name).classList.add("shaded");} 
+        else {l('mission'+Missions[i].name).className='grayed';}
     }
 
     if(T%30==0) Trees+=TpS;
@@ -471,8 +613,43 @@ Main=function() {
     if(SaveTimer==0 && Loaded) Save();
     T++;
     setTimeout(Main,1000/30);
+    
 }
 Load();
+
+
+// Assuming you have an element with ID 'bigTree', water button with ID 'waterBtn', and compost button with ID 'compostBtn'
+
+// Global variable to track tree size
+var currentTreeSize = 1;
+
+// Function to update tree size
+function updateTreeSize() {
+    var tree = document.getElementById('bigTree');
+    // Remove existing size classes
+    tree.className = tree.className.replace(/treeSize\d+/, '');
+    // Add new size class
+    tree.classList.add('treeSize' + currentTreeSize);
+}
+
+// Clicking the tree increases its size
+document.getElementById('bigTree').addEventListener('click', function() {
+    currentTreeSize = Math.min(currentTreeSize + 1, 10); // Assuming 10 is the max size
+    updateTreeSize();
+});
+
+// Watering the tree also increases its size
+document.getElementById('waterBtn').addEventListener('click', function() {
+    currentTreeSize = Math.min(currentTreeSize + 1, 10); // Adjust as per your logic for water's effect
+    updateTreeSize();
+});
+
+// Adding compost to the tree also increases its size
+document.getElementById('compostBtn').addEventListener('click', function() {
+    currentTreeSize = Math.min(currentTreeSize + 1, 10); // Adjust as per your logic for compost's effect
+    updateTreeSize();
+});
+
 
 
 l('othergames').addEventListener('mouseenter', showTooltip);
