@@ -1,58 +1,25 @@
-# Sendit
+![GUItopia](https://github.com/vincetyy/hack4slay/blob/main/public/images/Logo%20White.png)
 
-Sendit is a polished, marketing website template for Astro. Browse through a [live demo](https://top-quail.cloudvent.net/).
 
-![Sendit template screenshot](public/images/_screenshot.png)
+GUItopia features a live data collection and visualization system, demonstrating the collective impact GUI and its volunteers are achieving.
 
-[![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/sendit-astro-template)
 
 ## Features
 
-- Pre-built pages
-- Pre-styled components
-- Blog with pagination and category pages
-- Configurable navigation and footer
-- Multiple hero options
-- Configurable theme colors
-- Optimised for editing in [CloudCannon](https://cloudcannon.com/)
-- Live, visual editing powered by [Bookshop](https://github.com/CloudCannon/bookshop)
+- Charts and graphs that display the collective contributions of volunteers.
+- Gamified elements that encourage volunteers to increase their impact and track their progress against others.
+- Feedback form to measure the changes in volunteer habits
 
-## Setup
-
-1. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/)
-   or Astro locally).
 
 ## Develop
 
-Sendit is built with [Astro](https://astro.build/).
+GUItopia is built with [Astro](https://astro.build/).
 
 ```bash
 $ npm install
 $ npm run dev
 ```
 
-## Editing
+### Credits
 
-Sendit is set up for adding, updating and removing pages, components, posts, portfolio items, company details and footer elements in [CloudCannon](https://app.cloudcannon.com/).
-
-### Posts
-
-- Add, update or remove a post in the _Posts_ collection.
-- The **Staff Author** field links to members in the **Staff** collection.
-- Change the defaults when new posts are created in `content/posts/_defaults.md`.
-
-### Company details
-
-- Reused around the site to save multiple editing locations.
-- Set in the _Data_ / _Company_ section.
-
-### Nav/footer details
-
-- Reused around the site to save multiple editing locations.
-- Set in the _Data_ section with respective names
-
-### Theme colors
-
-- Theme colors can be set in _Data_ / _Theme_
-- The main colors are set and variants of them are computed
-- The colors will update on the next build
+- Astro for the website template (https://astro.build/themes/details/sendit/)
