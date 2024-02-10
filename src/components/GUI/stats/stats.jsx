@@ -1,5 +1,4 @@
 import './stats.css';
-import Chart from '../chart/chart'
 
 export default function Stats(block) {
   return (

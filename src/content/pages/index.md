@@ -18,7 +18,11 @@ content_blocks:
   - _bookshop_name: global/counter
     title_suffix: GUItopia
     description: >-
-      Featuring a live data collection and visualization system, GUItopia hopes to demonstrate the collective impact GUI and its volunteers are achieving. ​
+      Step into GUItopia – your portal to planting digital seeds of change with each act of kindness. Here, we don't just count your efforts; we celebrate them through a state-of-the-art system that meticulously tracks and visualizes the ripples of your impact. 
+       <br/> <br/>
+      As you volunteer and weave sustainable habits into your daily life, our dynamic dashboard brings your contribution to life, showcasing the real-time growth of our collective mission.
+      <br/> <br/>
+      It's a colorful, engaging story told in numbers and charts, illustrating the depth and reach of our shared journey towards a more sustainable world. Join us, and let's chart a course to a brighter, greener future, one data point and one volunteer at a time!
     alternate_style: false
     numbers:
       - prefix: 
